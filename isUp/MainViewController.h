@@ -12,4 +12,9 @@
 
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
 
+
+@property (assign, nonatomic) IBOutlet UILabel * blockLabel;
+@property (assign, nonatomic) IBOutlet UILabel * notificationLabel;
+
+
 @end

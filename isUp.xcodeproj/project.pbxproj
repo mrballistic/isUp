@@ -20,6 +20,8 @@
 		05F295FD169513BB007966CA /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F295FB169513BB007966CA /* MainStoryboard_iPad.storyboard */; };
 		05F29600169513BB007966CA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F295FF169513BB007966CA /* MainViewController.m */; };
 		05F29603169513BB007966CA /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F29602169513BB007966CA /* FlipsideViewController.m */; };
+		05F2960F16951673007966CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F2960E16951673007966CA /* SystemConfiguration.framework */; };
+		05F2961616951941007966CA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F2961516951722007966CA /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,9 @@
 		05F295FF169513BB007966CA /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		05F29601169513BB007966CA /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		05F29602169513BB007966CA /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+		05F2960E16951673007966CA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		05F2961416951722007966CA /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		05F2961516951722007966CA /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05F2960F16951673007966CA /* SystemConfiguration.framework in Frameworks */,
 				05F295E1169513BB007966CA /* UIKit.framework in Frameworks */,
 				05F295E3169513BB007966CA /* Foundation.framework in Frameworks */,
 				05F295E5169513BB007966CA /* CoreGraphics.framework in Frameworks */,
@@ -61,6 +67,7 @@
 		05F295D1169513BB007966CA = {
 			isa = PBXGroup;
 			children = (
+				05F2960E16951673007966CA /* SystemConfiguration.framework */,
 				05F295E6169513BB007966CA /* isUp */,
 				05F295DF169513BB007966CA /* Frameworks */,
 				05F295DD169513BB007966CA /* Products */,
@@ -88,6 +95,8 @@
 		05F295E6169513BB007966CA /* isUp */ = {
 			isa = PBXGroup;
 			children = (
+				05F2961416951722007966CA /* Reachability.h */,
+				05F2961516951722007966CA /* Reachability.m */,
 				05F295EF169513BB007966CA /* AppDelegate.h */,
 				05F295F0169513BB007966CA /* AppDelegate.m */,
 				05F295F8169513BB007966CA /* MainStoryboard_iPhone.storyboard */,
@@ -182,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05F2961616951941007966CA /* Reachability.m in Sources */,
 				05F295ED169513BB007966CA /* main.m in Sources */,
 				05F295F1169513BB007966CA /* AppDelegate.m in Sources */,
 				05F29600169513BB007966CA /* MainViewController.m in Sources */,
@@ -312,6 +322,7 @@
 				05F29608169513BB007966CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

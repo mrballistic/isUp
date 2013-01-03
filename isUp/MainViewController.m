@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "Reachability.h"
 
 @interface MainViewController ()
 
@@ -14,10 +15,39 @@
 
 @implementation MainViewController
 
+@synthesize blockLabel, notificationLabel;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reachabilityChanged:)
+                                                 name:kReachabilityChangedNotification
+                                               object:nil];
+    
+    Reachability * reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+    
+    reach.reachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            blockLabel.text = @"Block Says Reachable";
+        });
+    };
+    
+    reach.unreachableBlock = ^(Reachability * reachability)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+             blockLabel.text = @"Block Says Not Reachable";
+        });
+    };
+    
+    [reach startNotifier];
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,5 +95,21 @@
         [self performSegueWithIdentifier:@"showAlternate" sender:sender];
     }
 }
+
+
+-(void)reachabilityChanged:(NSNotification*)note
+{
+    Reachability * reach = [note object];
+    
+    if([reach isReachable])
+    {
+          notificationLabel.text = @"Notification Says Reachable";
+    }
+    else
+    {
+         notificationLabel.text = @"Notification Says Not Reachable";
+    }
+}
+
 
 @end
